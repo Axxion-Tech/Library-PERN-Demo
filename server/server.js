@@ -17,8 +17,9 @@ const booksController = require('./controllers/books_controller');
 app.use('/api/books', booksController);
 
 // LISTEN
-app.listen(4040, () => {
-    console.log('Server is running on port 4040');
+const PORT = process.env.PORT || 5005;
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
 })
 
 app.get('*', (req, res) => {
